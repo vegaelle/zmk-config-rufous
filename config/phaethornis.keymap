@@ -2,7 +2,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "symbols.h"      // defines symbols and actions
-#include "my_behaviors.dtsi" // defines thumb keys and homerow mods
+//#include "my_behaviors.dtsi" // defines thumb keys and homerow mods
+#include "custom_combos.dtsi"
 
 // SMALLER ALIAS
 
