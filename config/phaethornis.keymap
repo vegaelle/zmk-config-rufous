@@ -61,7 +61,7 @@
         symbols_layer: symbols_layer {
             display-name = "Symbols";
             bindings = <
-                       S_LT      S_GT      S_DLLR  S_PRCNT      S_AT      S_AMPS    S_STAR     S_SQT
+                       S_LT      S_GT      S_DLLR  S_PRCNT      S_PIPE    S_AMPS    S_STAR     S_SQT
             S_LBRC     S_LPAR    S_RPAR    S_RBRC  S_EQUAL      S_BSLH    S_PLUS    S_MINUS    S_FSLH     S_DQT
             S_CARET    S_LBKT    S_RBKT    S_HASH                         S_EXCL    S_SEMI     S_COLON    S_GRAVE
                                  LTHUMB_HOME  LTHUMB_REACH      RTHUMB_REACH  RTHUMB_HOME
