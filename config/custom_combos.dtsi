@@ -2,9 +2,8 @@
 #include "my_behaviors.dtsi"
 
 #define REQUIRE_PRIOR_IDLE 250
-#define TIMEOUT_MS_FAST 15
-#define TIMEOUT_MS_SLOW 20
-
+#define TIMEOUT_MS_FAST 20
+#define TIMEOUT_MS_SLOW 25
 
 / {
     combos {
@@ -22,6 +21,7 @@
             key-positions = <16 15 14>;
             require-prior-idle-ms = <0>;
             timeout-ms = <TIMEOUT_MS_FAST>;
+            slow-release;
         };
 
         backspace {
@@ -29,6 +29,7 @@
             key-positions = <15 16>;
             require-prior-idle-ms = <0>;
             timeout-ms = <TIMEOUT_MS_FAST>;
+            slow-release;
         };
 
         ctrl_backspace {
