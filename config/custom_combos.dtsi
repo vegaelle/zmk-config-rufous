@@ -95,5 +95,13 @@
             require-prior-idle-ms = <0>;
             timeout-ms = <TIMEOUT_MS_FAST>;
         };
+
+        go_to_params {
+            bindings = <&tog PARAM>;
+            key-positions = <5 6 7>;
+            layers = <FUNCTION PARAM>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            timeout-ms = <TIMEOUT_MS_SLOW>;
+        };
     };
 };

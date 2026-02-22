@@ -58,9 +58,6 @@
 // Go to shift odk from the shift key on the ODK layer
 #define DK_LTHUMB_HOME &EZ_SL(ODK_SHIFT)
 
-// Go to function with double tap numnav
-#define NN_LTHUMB_REACH &EZ_SL(FUNCTION)
-
 // Go to fuction with both THUM_B REACH
 #define NN_RTHUMB_REACH &EZ_SL(FUNCTION)
 
