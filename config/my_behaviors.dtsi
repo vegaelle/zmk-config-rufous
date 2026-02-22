@@ -1,0 +1,258 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+// clang-format off
+
+// ======================================
+// ============== TIMINGS ===============
+// ======================================
+
+#define TAPPING_TERM 250
+#define SHORT_TAPPING_TERM 150
+#define QUICK_TAP 185
+
+#define EZ_SL(layer)  bsl (layer) (layer)
+#define EZ_SK(mod)    bsk (mod) (mod)
+#define EZ_LSK(mod)   lbsk (mod) (mod)
+
+
+// ======================================
+// =============== LAYERS ===============
+// ======================================
+
+// Human-readable constants for the layer indexes.
+// Make sure to update this table if you edit the order / number of layers in the keymap.
+#define BASE          0
+#define ODK           1
+#define ODK_SHIFT     2
+#define SYMBOLS       3
+#define NUMNAV        4
+#define FUNCTION      5
+#define PARAM         6
+
+
+// ======================================
+// ================= HRM ================
+// ======================================
+
+#define HRM_A   &hrm LSHIFT A
+#define HRM_S   &hrm LALT S
+#define HRM_D   &hrm LCTL D
+#define HRM_F   &hrm LGUI F
+
+#define HRM_J   &hrm LSHIFT J
+#define HRM_K   &hrm RCTL K
+#define HRM_L   &hrm LALT L
+#define HRM_SC  &hrm RGUI SEMI
+
+
+// ======================================
+// ============== THUMBS ================
+// ======================================
+
+#define LTHUMB_HOME &EZ_SK(LSHIFT)
+#define LTHUMB_REACH &EZ_SL(NUMNAV)
+#define RTHUMB_REACH &worst_space
+#define RTHUMB_HOME &sym_shift_altgr
+
+// Go to shift odk from the shift key on the ODK layer
+#define DK_LTHUMB_HOME &EZ_SL(ODK_SHIFT)
+
+// Go to function with double tap numnav
+#define NN_LTHUMB_REACH &EZ_SL(FUNCTION)
+
+// Go to fuction with both THUM_B REACH
+#define NN_RTHUMB_REACH &EZ_SL(FUNCTION)
+
+// ======================================
+// ======= LAYER PARAMS & TIMINGS =======
+// ======================================
+
+&sl { ignore-modifiers; }; // keep one-shot-mods when chained into a one-shot-layer
+&sk { quick-release; };    // must-have! (lots of false positives otherwise)
+
+// add our common tap-hold parametesr to the default options
+&mt {
+  tapping-term-ms = <SHORT_TAPPING_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
+};
+
+&lt{
+  tapping-term-ms = <TAPPING_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
+};
+
+/ {
+  behaviors {
+
+    hrm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+
+    lth: lt_hold_preferred { // same as lt, but with hold-preferred
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <SHORT_TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+
+    // like ZMK's sticky layer (sl) but with a more robust timing
+    osl: one_shot_layer {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings = <&macro_param_1to1>, <&macro_tap &sl MACRO_PLACEHOLDER>;
+    };
+
+    bsl: better_sticky_layer {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&osl>;
+    };
+
+    // like ZMK's sticky key (sk) but with a more robust timing
+    osm: one_shot_modifier {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+    };
+
+    bsk: better_sticky_key {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&osm>;
+    };
+
+    // Stabilize Ergo-L AltGr keymap (symbols layer)
+    // Some apps do not respond correctly to RALT(key) for symbol shortcuts
+    // E.g. : Ctrl+/- (CTRL(RALT(+/-)))
+    // SYMBOL is the AltGr keymap re-implemented mostly without RALT(key)
+    // Goes to SYMBOLS (sticky), if shifted, acts as SHIFT-RALT
+    // Any other mod goes to SYMBOLS (kept)
+
+    sym_shift_altgr: sym_shift_altgr {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sym_shift_altgr_0>, <&EZ_SL(SYMBOLS)>;
+      mods      = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
+      keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
+    };
+
+    sym_shift_altgr_0: sym_shift_altgr_0 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&EZ_SL(SYMBOLS)>, <&EZ_SK(RALT)>;
+      mods      = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // Swap out the standard dead key for a one-shot layer to override some of the keys
+    dead: dead {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&EZ_SL(ODK)>, <&EZ_SL(ODK_SHIFT)>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      //keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    // Macro to tap Ergo‑L’s ODK before the specified key
+    odk: one_dead_key_macro {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+      = <&macro_tap &kp O>
+      , <&macro_param_1to1>
+      , <&macro_tap &kp MACRO_PLACEHOLDER>
+      ;
+    };
+
+    // Same as `odk`, but adds Shift to the specified key
+    odks: one_dead_key_shift_macro {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings
+      = <&macro_tap &kp O>
+      , <&macro_press &kp LSHIFT>
+      , <&macro_param_1to1>
+      , <&macro_tap &kp MACRO_PLACEHOLDER>
+      , <&macro_release &kp LSHIFT>
+      ;
+    };
+
+    // ======================================
+    // === STANDARD KEY OUTPUTS OVERRIDES ===
+    // ======================================
+
+    // Overriding the usual AltGr for V (_) with (#)
+    altgr_v_hash: altgr_v_hash {
+      compatible = "zmk,behavior-mod-morph";
+      label = "ALTGR_V_HASH";
+      bindings = <&kp V>, <&kp RA(B)>;
+
+      #binding-cells = <0>;
+      mods = <(MOD_RALT)>;
+    };
+
+    //I'm sorry Nuke …
+    worst_space: worst_space {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp SPACE>, <&kp SPACE>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+  };
+
+  // go to base layer and press mod
+  
+  lkp: goto_layer_then_keypress {
+    compatible = "zmk,behavior-macro-one-param";
+    wait-ms = <1>;
+    tap-ms = <1>;
+    #binding-cells = <1>;
+    bindings =
+      <&macro_tap &to BASE>,
+      <&macro_param_1to1>,
+      <&macro_press &kp MACRO_PLACEHOLDER>,
+      <&macro_pause_for_release>,
+      <&macro_param_1to1>,
+      <&macro_release &kp MACRO_PLACEHOLDER>;
+  };
+
+  losm: goto_layer_then_osm {
+    compatible = "zmk,behavior-macro-one-param";
+    wait-ms = <1>;
+    tap-ms = <1>;
+    #binding-cells = <1>;
+    bindings =
+      <&macro_tap &to BASE>,
+      <&macro_param_1to1>,
+      <&macro_tap &sk MACRO_PLACEHOLDER>;
+  };
+
+  lbsk: bsk_on_other_layer {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+    bindings = <&lkp>, <&losm>;
+  };
+};
