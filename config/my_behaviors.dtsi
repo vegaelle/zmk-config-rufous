@@ -150,7 +150,7 @@
       tapping-term-ms = <TAPPING_TERM>;
       flavor = "tap-preferred";
       bindings = <&sym_shift_altgr &kp>;
-    }
+    };
 
     sym_shift_altgr: sym_shift_altgr {
       compatible = "zmk,behavior-mod-morph";
