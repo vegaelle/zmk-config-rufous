@@ -4,15 +4,15 @@
  * Action Combos
  */
 
-#define X_UNDO  &kp CMD(Z)
-#define X_CUT   &kp CMD(X)
-#define X_COPY  &kp CMD(W)
-#define X_PASTE &kp CMD(V)
-#define X_REDO  &kp CMD(P)
+#define X_UNDO  &kp RC(Z)
+#define X_CUT   &kp RC(X)
+#define X_COPY  &kp RC(W)
+#define X_PASTE &kp RC(V)
+#define X_REDO  &kp RC(P)
 
-#define X_CLOSE &kp CMD(T)
-#define X_SAVE  &kp CMD(S)
-#define X_ALL   &kp CMD(A)
+#define X_CLOSE &kp RC(T)
+#define X_SAVE  &kp RC(S)
+#define X_ALL   &kp RC(A)
 
 /**
  * Arsenik Symbols:
