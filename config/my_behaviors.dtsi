@@ -53,7 +53,7 @@
 #define LTHUMB_HOME   &EZ_SK(LSHIFT)
 #define LTHUMB_REACH  &lt NUMNAV TAB
 #define RTHUMB_REACH  &worst_space
-#define RTHUMB_HOME   &lt SYMBOLS BACKSPACE
+#define RTHUMB_HOME   &sym_shift_altgr
 
 // Go to shift odk from the shift key on the ODK layer
 #define DK_LTHUMB_HOME &EZ_SL(ODK_SHIFT)
@@ -144,18 +144,10 @@
     // Goes to SYMBOLS (sticky), if shifted, acts as SHIFT-RALT
     // Any other mod goes to SYMBOLS (kept)
 
-    backspace_altgr: backspace_altgr {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&sym_shift_altgr &kp>;
-    };
-
     sym_shift_altgr: sym_shift_altgr {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sym_shift_altgr_0>, <&EZ_SL(SYMBOLS)>;
+      bindings = <&sym_shift_altgr_0>, <&lt SYMBOLS BACKSPACE>;
       mods      = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
       keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
     };
@@ -163,7 +155,7 @@
     sym_shift_altgr_0: sym_shift_altgr_0 {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&EZ_SL(SYMBOLS)>, <&EZ_SK(RALT)>;
+      bindings = <&lt SYMBOLS BACKSPACE>, <&EZ_SK(RALT)>;
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
