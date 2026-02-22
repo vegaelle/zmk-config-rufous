@@ -149,7 +149,7 @@
       #binding-cells = <2>;
       tapping-term-ms = <TAPPING_TERM>;
       flavor = "tap-preferred";
-      bindings = <&sym_shift_altgr>, <&kp>;
+      bindings = <&sym_shift_altgr &kp>;
     };
 
     sym_shift_altgr: sym_shift_altgr {
@@ -212,7 +212,6 @@
     // Overriding the usual AltGr for V (_) with (#)
     altgr_v_hash: altgr_v_hash {
       compatible = "zmk,behavior-mod-morph";
-      label = "ALTGR_V_HASH";
       bindings = <&kp V>, <&kp RA(B)>;
 
       #binding-cells = <0>;
