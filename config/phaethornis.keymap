@@ -31,7 +31,7 @@
             display-name = "Base";
             bindings = <
                      &kp W    &kp E    &kp R    &kp T       &kp N    &kp U    &kp I    &dead
-            HRM_A    HRM_S    HRM_D    HRM_F    &kp G       &kp H    HRM_J    HRM_K    HRM_L    HRM_SEMI
+            HRM_A    HRM_S    HRM_D    HRM_F    &kp G       &kp H    HRM_J    HRM_K    HRM_L    HRM_SC
             &kp Q    &kp X    &kp C    ALT_V                         &kp M    _COMMA   &kp DOT  &kp P
                             LTHUMB_HOME  LTHUMB_REACH       RTHUMB_REACH  RTHUMB_HOME
             >;
