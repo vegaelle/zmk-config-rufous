@@ -146,7 +146,7 @@
 
     backspace_altgr: backspace_altgr {
       compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
+      #binding-cells = <0>;
       tapping-term-ms = <TAPPING_TERM>;
       flavor = "tap-preferred";
       bindings = <&sym_shift_altgr>, <&kp BACKSPACE>;
