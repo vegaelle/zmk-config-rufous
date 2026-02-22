@@ -147,7 +147,7 @@
     sym_shift_altgr: sym_shift_altgr {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sym_shift_altgr_0>, <&lt SYMBOLS BACKSPACE>;
+      bindings = <&sym_shift_altgr_0>, <&lth SYMBOLS BACKSPACE>;
       mods      = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
       keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
     };
@@ -155,7 +155,7 @@
     sym_shift_altgr_0: sym_shift_altgr_0 {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&lt SYMBOLS BACKSPACE>, <&EZ_SK(RALT)>;
+      bindings = <&lth SYMBOLS BACKSPACE>, <&EZ_SK(RALT)>;
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
