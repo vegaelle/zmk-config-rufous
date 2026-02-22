@@ -53,7 +53,8 @@
 #define LTHUMB_HOME   &EZ_SK(LSHIFT)
 #define LTHUMB_REACH  &lt NUMNAV TAB
 #define RTHUMB_REACH  &worst_space
-#define RTHUMB_HOME   &hrm &sym_shift_altgr BACKSPACE
+//#define RTHUMB_HOME   &hrm &sym_shift_altgr BACKSPACE
+#define RTHUMB_HOME   &hrm RALT BACKSPACE
 
 // Go to shift odk from the shift key on the ODK layer
 #define DK_LTHUMB_HOME &EZ_SL(ODK_SHIFT)
