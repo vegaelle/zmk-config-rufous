@@ -2,6 +2,7 @@
 #include "my_behaviors.dtsi"
 
 #define REQUIRE_PRIOR_IDLE 250
+#define REQUIRE_PRIOR_IDLE_FAST 150
 #define TIMEOUT_MS_FAST 20
 #define TIMEOUT_MS_SLOW 25
 
@@ -38,7 +39,7 @@
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <15 16>;
-            require-prior-idle-ms = <0>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_FAST>;
             timeout-ms = <TIMEOUT_MS_FAST>;
             slow-release;
         };
@@ -46,14 +47,14 @@
         ctrl_backspace {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <6 7>;
-            require-prior-idle-ms = <0>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_FAST>;
             timeout-ms = <TIMEOUT_MS_FAST>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <9 10>;
-            require-prior-idle-ms = <0>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE_FAST>;
             timeout-ms = <TIMEOUT_MS_FAST>;
         };
 
