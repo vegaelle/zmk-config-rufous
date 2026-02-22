@@ -19,10 +19,10 @@
 #define _EURO       &kp LS(NUMBER_1)
 #define _DEGREE     &odk N0
 
-#define HRM_4       &hrm LSHIFT S_N4
-#define HRM_5       &hrm RCTL S_N5
-#define HRM_6       &hrm LALT S_N6
-#define HRM_0       &hrm RGUI S_N0
+#define HRM_4       &hrm LSHIFT N4
+#define HRM_5       &hrm RCTL N5
+#define HRM_6       &hrm LALT N6
+#define HRM_0       &hrm RGUI N0
 
 / {
     keymap {
