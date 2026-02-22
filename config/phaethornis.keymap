@@ -1,4 +1,4 @@
-#include <dt-bindings/zmk/input_transform.h>
+//#include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/bt.h>
 
 #include "symbols.h"      // defines symbols and actions

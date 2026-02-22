@@ -97,5 +97,5 @@
             require-prior-idle-ms = <0>;
             timeout-ms = <TIMEOUT_MS_FAST>;
         };
-
+    };
 };
