@@ -107,8 +107,8 @@
     osl: one_shot_layer {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      tap-ms = <1>;
-      wait-ms = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
       bindings = <&macro_param_1to1>, <&macro_tap &sl MACRO_PLACEHOLDER>;
     };
 
@@ -124,8 +124,8 @@
     osm: one_shot_modifier {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      tap-ms = <1>;
-      wait-ms = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
       bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
     };
 
@@ -181,8 +181,8 @@
     odk: one_dead_key_macro {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      tap-ms = <1>;
-      wait-ms = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
       bindings
       = <&macro_tap &kp O>
       , <&macro_param_1to1>
@@ -194,8 +194,8 @@
     odks: one_dead_key_shift_macro {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      tap-ms = <1>;
-      wait-ms = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
       bindings
       = <&macro_tap &kp O>
       , <&macro_press &kp LSHIFT>
@@ -232,8 +232,8 @@
   
   lkp: goto_layer_then_keypress {
     compatible = "zmk,behavior-macro-one-param";
-    wait-ms = <1>;
-    tap-ms = <1>;
+    wait-ms = <0>;
+    tap-ms = <0>;
     #binding-cells = <1>;
     bindings =
       <&macro_tap &to BASE>,
@@ -246,8 +246,8 @@
 
   losm: goto_layer_then_osm {
     compatible = "zmk,behavior-macro-one-param";
-    wait-ms = <1>;
-    tap-ms = <1>;
+    wait-ms = <0>;
+    tap-ms = <0>;
     #binding-cells = <1>;
     bindings =
       <&macro_tap &to BASE>,
