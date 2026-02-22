@@ -6,23 +6,22 @@
 
 // SMALLER ALIAS
 
-#define V       &altgr_v_hash
-#define WSPACE  worst_space
-#define COMMA   &kp COMMA
-#define DOT     &kp DOT
-#define AT      &kp RA(Y)
-#define MIDDOT  &odk PERIOD
-#define BULLET  &sodk PERIOD
-#define K       &kp SLASH
-#define LS_K    &kp LS(SLASH)
-#define GREEK   &odk COMMA
-#define EURO    &kp LS(NUMBER_1)
-#define DEGREE  &odk N0
+#define ALT_V       &altgr_v_hash
+#define WSPACE      worst_space
+#define _COMMA      &kp COMMA
+#define _AT         &kp RA(Y)
+#define _MIDDOT     &odk PERIOD
+#define _BULLET     &sodk PERIOD
+#define _K          &kp SLASH
+#define LS_K        &kp LS(SLASH)
+#define _GREEK      &odk COMMA
+#define _EURO       &kp LS(NUMBER_1)
+#define _DEGREE     &odk N0
 
-#define HRM_4   &hrm LSHIFT S_N4
-#define HRM_5   &hrm RCTL S_N5
-#define HRM_6   &hrm LALT S_N6
-#define HRM_0   &hrm RGUI S_N0
+#define HRM_4       &hrm LSHIFT S_N4
+#define HRM_5       &hrm RCTL S_N5
+#define HRM_6       &hrm LALT S_N6
+#define HRM_0       &hrm RGUI S_N0
 
 / {
     keymap {
@@ -33,7 +32,7 @@
             bindings = <
                      &kp W    &kp E    &kp R    &kp T       &kp N    &kp U    &kp I    &dead
             HRM_A    HRM_S    HRM_D    HRM_F    &kp G       &kp H    HRM_J    HRM_K    HRM_L    HRM_SEMI
-            &kp Q    &kp X    &kp C    V                             &kp M    COMMA    DOT      &kp P
+            &kp Q    &kp X    &kp C    ALT_V                         &kp M    _COMMA   &kp DOT  &kp P
                             LTHUMB_HOME  LTHUMB_REACH       RTHUMB_REACH  RTHUMB_HOME
             >;
         };
@@ -41,10 +40,10 @@
         one_dead_key {
             display-name = "OneDeadKey";
             bindings = <
-                      &odk W    &odk E    &odk R    &kp Z       &odk N    &kp Y     &odk I    &odk O
-            &odk A    &odk S    &odk D    &odk F    &kp B       AT        MIDDOT    &odk K    &odk L      &odk SEMI
-            &odk Q    &odk Z    &kp RA(Z) &odk V                          K         GREEK     &odk DOT    &odk P
-                             DK_LTHUMB_HOME  LTHUMB_REACH       RTHUMB_REACH  RTHUMB_HOME
+                      &odk W    &odk E     &odk R    &kp Z       &odk N    &kp Y     &odk I    &odk O
+            &odk A    &odk S    &odk D     &odk F    &kp B       _AT       _MIDDOT    &odk K    &odk L      &odk SEMI
+            &odk Q    &odk Z    &kp RA(Z)  &odk V                          _K        _GREEK    &odk DOT    &odk P
+                             DK_LTHUMB_HOME  LTHUMB_REACH        RTHUMB_REACH  RTHUMB_HOME
             >;
         };
 
@@ -52,7 +51,7 @@
             display-name = "ShiftedOneDeadKey";
             bindings = <
                        &odks W    &odks E    &odks R    &kp LS(Z)      &odks N    &kp LS(Y)  &odks I      &odks O
-            &odks A    &odks S    &odks D    &odks F    &kp LS(B)      &odks H    BULLET     &odks K      &odks L   &odks SEMI
+            &odks A    &odks S    &odks D    &odks F    &kp LS(B)      &odks H    _BULLET    &odks K      &odks L   &odks SEMI
             &odks Q    &odks Z    &odks C    &odks V                              LS_K       &odks COMMA  &odks DOT &odks P
                                         LTHUMB_HOME  LTHUMB_REACH      RTHUMB_REACH  RTHUMB_HOME
             >;
@@ -71,9 +70,9 @@
         num_nav {
             display-name = "NumNav";
             bindings = <
-                    &none       &kp UP      &none       &kp DEL         DEGREE  S_N7    S_N8    S_N9
-            &none   &kp LEFT    &kp DOWN    &kp RIGHT   &none           EURO    HRM_4   HRM_5   HRM_6   HRM_0
-            &none   X_UNDO      &none       X_REDO                              S_N1    S_N2    S_N3    &kp KP_DOT
+                    &none       &kp UP      &none       &kp DEL         _DEGREE  S_N7    S_N8    S_N9
+            &none   &kp LEFT    &kp DOWN    &kp RIGHT   &none           _EURO    HRM_4   HRM_5   HRM_6   HRM_0
+            &none   X_UNDO      &none       X_REDO                               S_N1    S_N2    S_N3    &kp KP_DOT
                                    LTHUMB_HOME  NN_LTHUMB_REACH         NN_RTHUMB_REACH  RTHUMB_HOME
             >;
         };
