@@ -8,7 +8,7 @@
 // ======================================
 
 #define TAPPING_TERM 250
-#define SHORT_TAPPING_TERM 50
+#define SHORT_TAPPING_TERM 100
 #define QUICK_TAP 185
 
 #define EZ_SL(layer)  bsl (layer) (layer)
