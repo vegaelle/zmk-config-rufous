@@ -4,7 +4,7 @@
 #define REQUIRE_PRIOR_IDLE 250
 #define REQUIRE_PRIOR_IDLE_FAST 150
 #define TIMEOUT_MS_FAST 15
-#define TIMEOUT_MS_SLOW 25
+#define TIMEOUT_MS_SLOW 20
 
 
 // ╭──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────╮
@@ -26,13 +26,13 @@
             key-positions = <1 0>;
             require-prior-idle-ms = <0>;
             timeout-ms = <TIMEOUT_MS_FAST>;
-        };
+        };et
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <16 15 14>;
             require-prior-idle-ms = <0>;
-            timeout-ms = <TIMEOUT_MS_FAST>;
+            timeout-ms = <TIMEOUT_MS_SLOW>;
             slow-release;
         };
 
