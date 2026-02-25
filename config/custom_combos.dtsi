@@ -26,7 +26,7 @@
             key-positions = <1 0>;
             require-prior-idle-ms = <0>;
             timeout-ms = <TIMEOUT_MS_FAST>;
-        };et
+        };
 
         enter {
             bindings = <&kp ENTER>;
