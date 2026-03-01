@@ -4,7 +4,7 @@
 #define REQUIRE_PRIOR_IDLE 250
 #define REQUIRE_PRIOR_IDLE_FAST 150
 #define TIMEOUT_MS_FAST 15
-#define TIMEOUT_MS_SLOW 20
+#define TIMEOUT_MS_SLOW 22
 
 
 // ╭──────┬──────┬──────┬──────┬──────╮  ╭──────┬──────┬──────┬──────┬──────╮

@@ -62,7 +62,7 @@
 #define NN_RTHUMB_REACH &EZ_SL(FUNCTION)
 
 // On numnav, we want RALT instead of SYM
-#define NN_RTHUMB_HOME &skmt RALT BACKSPACE
+#define NN_RTHUMB_HOME &mt RALT BACKSPACE
 
 // ======================================
 // ======= LAYER PARAMS & TIMINGS =======
@@ -127,14 +127,6 @@
       bindings = <&kp>, <&osm>;
     };
 
-    skmt: sticky_mod_tap {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <TAPPING_TERM>;
-      flavor = "hold-preferred";
-      bindings = <&osm>, <&kp>; //hold leads to osm
-    };
-
     // Stabilize Ergo-L AltGr keymap (symbols layer)
     // Some apps do not respond correctly to RALT(key) for symbol shortcuts
     // E.g. : Ctrl+/- (CTRL(RALT(+/-)))
@@ -145,15 +137,7 @@
     sym_shift_altgr: sym_shift_altgr {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sym_shift_altgr_0>, <&lth SYMBOLS BACKSPACE>;
-      mods      = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
-      keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_LGUI|MOD_RGUI|MOD_LALT)>;
-    };
-
-    sym_shift_altgr_0: sym_shift_altgr_0 {
-      compatible = "zmk,behavior-mod-morph";
-      #binding-cells = <0>;
-      bindings = <&lth SYMBOLS BACKSPACE>, <&EZ_SK(RALT)>;
+      bindings = <&lth SYMBOLS BACKSPACE>, <&kp RALT>;
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
