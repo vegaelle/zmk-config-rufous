@@ -64,7 +64,7 @@
                        S_LT      S_GT      S_DLLR  S_PRCNT      S_PIPE    S_AMPS    S_STAR     S_SQT
             S_LBRC     S_LPAR    S_RPAR    S_RBRC  S_EQUAL      S_BSLH    S_PLUS    S_MINUS    S_FSLH     S_DQT
             S_CARET    S_LBKT    S_RBKT    S_HASH                         S_EXCL    S_SEMI     S_COLON    S_GRAVE
-                                 LTHUMB_HOME  LTHUMB_REACH      RTHUMB_REACH  RTHUMB_HOME
+                                 LTHUMB_HOME  LTHUMB_REACH      RTHUMB_REACH  BACKSPACE
             >;
         };
 
@@ -84,7 +84,7 @@
                        &kp F1    &kp F2    &kp F3   &kp F12     &none    &none       &none      &none
             &kp F10    &kp F4    &kp F5    &kp F6   &none       &none    &kp RSHIFT  &kp RCTRL  &kp LALT  &kp RGUI
             &kp F11    &kp F7    &kp F8    &kp F9                        &none       &none      &none     &none
-                                  LTHUMB_HOME  LTHUMB_REACH     RTHUMB_REACH  RTHUMB_HOME
+                                  LTHUMB_HOME  LTHUMB_REACH     RTHUMB_REACH  BACKSPACE
             >;
         };
 
