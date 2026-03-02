@@ -44,7 +44,7 @@
                       &odk W    &odk E     &odk R    &kp Z       &odk N    &kp Y     &odk I    &odk O
             &odk A    &odk S    &odk D     &odk F    &kp B       _AT       _MIDDOT    &odk K    &odk L      &odk SEMI
             &odk Q    &odk Z    &kp RA(Z)  &odk V                          _K        _GREEK    &odk DOT    &odk P
-                             DK_LTHUMB_HOME  LTHUMB_REACH        RTHUMB_REACH  RTHUMB_HOME
+                             DK_LTHUMB_HOME  LTHUMB_REACH        RTHUMB_REACH  &kp BACKSPACE
             >;
         };
 
@@ -54,7 +54,7 @@
                        &odks W    &odks E    &odks R    &kp LS(Z)      &odks N    &kp LS(Y)  &odks I      &odks O
             &odks A    &odks S    &odks D    &odks F    &kp LS(B)      &odks H    _BULLET    &odks K      &odks L   &odks SEMI
             &odks Q    &odks Z    &odks C    &odks V                              LS_K       &odks COMMA  &odks DOT &odks P
-                                        LTHUMB_HOME  LTHUMB_REACH      RTHUMB_REACH  RTHUMB_HOME
+                                        LTHUMB_HOME  LTHUMB_REACH      RTHUMB_REACH  &kp BACKSPACE
             >;
         };
 
