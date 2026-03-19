@@ -8,8 +8,8 @@
 // ======================================
 
 #define TAPPING_TERM 250
-#define SHORT_TAPPING_TERM 150
-#define QUICK_TAP 185
+#define SHORT_TAPPING_TERM 180
+#define QUICK_TAP 150
 
 #define EZ_SL(layer)  bsl (layer) (layer)
 #define EZ_SK(mod)    bsk (mod) (mod)
@@ -137,7 +137,7 @@
     sym_shift_altgr: sym_shift_altgr {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&lt SYMBOLS BACKSPACE>, <&kp RALT>;
+      bindings = <&lth SYMBOLS BACKSPACE>, <&kp RALT>;
       mods      = <(MOD_LSFT|MOD_RSFT)>;
       keep-mods = <(MOD_LSFT|MOD_RSFT)>;
     };
