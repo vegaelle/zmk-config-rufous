@@ -35,10 +35,10 @@
 // ================= HRM ================
 // ======================================
 
-#define HRM_A   &hrm LSHIFT A
+#define HRM_A   &hrm LGUI A
 #define HRM_S   &hrm LALT S
 #define HRM_D   &hrm LCTL D
-#define HRM_F   &hrm LGUI F
+#define HRM_F   &hrm LSHIFT F
 
 #define HRM_J   &hrm LSHIFT J
 #define HRM_K   &hrm RCTL K
