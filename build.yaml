@@ -20,8 +20,10 @@
 ---
 include:
 
-  - board: seeeduino_xiao_ble
-    shield: phaethornis_left
+  - board: seeeduino_xiao_rp2040
+    shield: hummingbird
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
 ## To build with ZMK Studio support, uncomment the following block
 ## by removing the leading '#' from each line.
@@ -31,9 +33,3 @@ include:
 #    snippet: studio-rpc-usb-uart
 #    cmake-args: -DCONFIG_ZMK_STUDIO=y
 #    artifact-name: phaethornis_left_with_studio
-
-  - board: seeeduino_xiao_ble
-    shield: phaethornis_right
-
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
